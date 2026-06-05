@@ -1,4 +1,4 @@
-:root {
+body {
     background-color: #ffeed5;
     font-family: sans-serif;
     color: #726459;
@@ -11,7 +11,9 @@
 
 .main_header {
     font-weight: normal;
-    max-width: 750px;
+    max-width: 700px;
+    font-size: 27px;
+    margin-top: 1px;
 }
 
 .item_label {
