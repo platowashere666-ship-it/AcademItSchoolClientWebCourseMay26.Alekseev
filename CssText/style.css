@@ -1,19 +1,24 @@
-body {
-    background-color: #ffeed5;
-    font-family: sans-serif;
-    color: #726459;
-    padding-left: 10px;
-}
-
 * {
     box-sizing: border-box;
 }
 
+.text_block {
+    background-color: #ffeed5;
+    font-family: sans-serif;
+    color: #726459;
+    padding-left: 11px;
+    padding-bottom: 1px;
+    max-width: 745px;
+}
+
 .main_header {
     font-weight: normal;
-    max-width: 700px;
-    font-size: 27px;
-    margin-top: 10px;
+    font-size: 28px;
+    padding-top: 10px;
+}
+
+.item {
+    margin-top: -6px;
 }
 
 .item_label {
@@ -21,9 +26,11 @@ body {
     color: #398eb3;
 }
 
-.about_text {
+.about_text p {
+    margin-top: -7px;
+    padding-right: 10px;
+    text-align: justify;
     font-size: 15px;
     text-indent: 15px;
-    max-width: 700px;
     line-height: 150%;
 }
