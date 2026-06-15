@@ -7,27 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 class="main_header font_style">Отправить заявку</h1>
-
 <div class="form_block">
+    <h1 class="main_header font_style">Отправить заявку</h1>
+
     <form action="css_form.html" method="post" class="client_info font_style">
-        <p><label for="client_name">Ваше имя</label></p>
-        <p><input placeholder="Ваше имя *" required type="text" id="client_name" name="clientName"/></p>
+        <label for="client_name">Ваше имя</label>
+        <input placeholder="Ваше имя *" required type="text" id="client_name" name="clientName">
 
-        <p><label for="client_number">Ваш номер телефона</label></p>
-        <p><input placeholder="Ваш номер телефона *" required type="tel" id="client_number" name="clientNumber"/></p>
+        <label for="client_number">Ваш номер телефона</label>
+        <input placeholder="Ваш номер телефона *" required type="tel" id="client_number" name="clientNumber">
 
-        <p><label for="client_mail">Ваш email или VK</label></p>
-        <p><input placeholder="Ваш email или VK *" required type="text" id="client_mail" name="clientMail"/></p>
+        <label for="client_mail">Ваш email или VK</label>
+        <input placeholder="Ваш email или VK *" required type="text" id="client_mail" name="clientMail">
 
-        <p><label for="client_comment">Комментарий</label></p>
-        <p><textarea rows="6" placeholder="Комментарий (необязательно)" id="client_comment"
-                     name="clientComment"></textarea>
-        </p>
+        <label for="client_comment">Комментарий</label>
+        <textarea rows="6" placeholder="Комментарий (не обязательно)" id="client_comment"
+                  name="clientComment"></textarea>
 
-        <p><span>Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</span></p>
+        <p class="instruction">Заполните и отправьте форму, и мы перезвоним Вам по указанному номеру</p>
 
-        <button class="right-position button-style" type="submit">Отправить заявку</button>
+        <button class="submit_button" type="submit">Отправить заявку</button>
     </form>
 </div>
 </body>
