@@ -5,42 +5,35 @@
 
     array.sort(function (e1, e2) {
         return e2 - e1;
-    })
+    });
 
-    console.log(array);
+    console.log("Отсортированный по убыванию массив: " + array);
 
-    const array1 = array.slice(0, 5);
-    console.log(array1);
+    const subArray = array.slice(0, 5);
+    console.log("Подмассив из первых 5 элементов: " + subArray);
 
-    const array2 = array.slice(array.length - 5);
-    console.log(array2);
+    const subArray2 = array.reverse().slice(0, 5);
+    console.log("Подмассив из последних 5 элементов: " + subArray2);
 
-    const evenArray = array.filter(e => e % 2 === 0);
-    console.log(evenArray);
+    function getEvenNumbersSum(array) {
+        const evenNumbersArray = array.filter(e => e % 2 === 0);
 
-    let elementsSum = 0;
-
-    for (let i = 0; i < evenArray.length; ++i) {
-        elementsSum += evenArray[i];
+        return evenNumbersArray.reduce((sum, current) => sum + current, 0);
     }
 
-    console.log(elementsSum);
-})();
+    console.log("Сумма чётных элементов массива: " + getEvenNumbersSum(array));
 
-(function () {
-    const array = [];
+    const array2 = [];
 
     for (let i = 1; i <= 100; ++i) {
-        array.push(i);
+        array2.push(i);
     }
 
-    const evenArray = array.filter(e => e % 2 === 0);
-
-    const result = [];
-
-    for (let i = 0; i < evenArray.length; ++i) {
-        result.push(evenArray[i] ** 2);
+    function getEvenNumbersSquaresArray(array) {
+        return array
+            .filter(e => e % 2 === 0)
+            .map(e => e * e);
     }
 
-    console.log(result);
+    console.log("Список квадратов чётных элементов второго массива: " + getEvenNumbersSquaresArray(array2));
 })();
