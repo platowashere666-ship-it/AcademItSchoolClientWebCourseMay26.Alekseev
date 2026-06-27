@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Перевод Температур</title>
+    <link rel="stylesheet" href="css_normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div class="temperature_converter_block">
+    <h1 class="main_header">Перевод температур</h1>
+
+    <form id="temperature_converter_form" class="temperature_converter_form">
+        <div>
+            <label for="temperature_input_text_field">Температура в Цельсиях</label>
+        </div>
+
+        <div class="field_wrapper">
+            <input type="text" id="temperature_input_text_field" placeholder="Введите температуру">
+            <div class="error_message">Необходимо заполнить поле числом</div>
+        </div>
+
+        <button>Перевести</button>
+    </form>
+
+    <ul id="temperature_output_list" class="temperature_output_list"></ul>
+</div>
+</body>
+</html>
