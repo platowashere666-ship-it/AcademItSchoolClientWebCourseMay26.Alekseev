@@ -12,7 +12,8 @@
                 {
                     name: "Novosibirsk",
                     population: 1637266
-                }]
+                }
+            ]
         },
         {
             name: "Belarus",
@@ -24,7 +25,8 @@
                 {
                     name: "Brest",
                     population: 347894
-                }]
+                }
+            ]
         },
         {
             name: "USA",
@@ -40,13 +42,13 @@
                 {
                     name: "Chicago",
                     population: 2731585
-                }]
-        }];
+                }
+            ]
+        }
+    ];
 
     function getMaxCitiesCount(countries) {
-        return countries.reduce((maxCitiesCount, country) => {
-            return Math.max(maxCitiesCount, country.cities.length);
-        }, 0);
+        return countries.reduce((maxCitiesCount, country) => Math.max(maxCitiesCount, country.cities.length), 0);
     }
 
     function getCountriesWithMaxCitiesCount(countries) {
@@ -61,15 +63,15 @@
         return country.cities.reduce((sum, city) => sum + city.population, 0);
     }
 
-    function getCountriesPopulationMap(countries) {
-        const countriesPopulationMap = {};
+    function getCountriesPopulationsMap(countries) {
+        const countriesPopulationsMap = {};
 
         countries.forEach(country => {
-            countriesPopulationMap[country.name] = getTotalPopulation(country);
+            countriesPopulationsMap[country.name] = getTotalPopulation(country);
         });
 
-        return countriesPopulationMap;
+        return countriesPopulationsMap;
     }
 
-    console.log("Объект с информацией по всем странам (название: население):", getCountriesPopulationMap(countries));
+    console.log("Объект с информацией по всем странам (название: население):", getCountriesPopulationsMap(countries));
 })();

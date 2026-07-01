@@ -7,20 +7,14 @@
 
     console.log("Отсортированный по убыванию массив: " + numbers);
 
-    const largestFiveNumbers = numbers.slice(0, 5);
-    console.log("Подмассив из первых 5 элементов: " + largestFiveNumbers);
+    const firstFiveNumbers = numbers.slice(0, 5);
+    console.log("Подмассив из первых 5 элементов: " + firstFiveNumbers);
 
-    const smallestFiveNumbers = numbers.slice(-5);
-    console.log("Подмассив из последних 5 элементов: " + smallestFiveNumbers);
+    const lastFiveNumbers = numbers.slice(-5);
+    console.log("Подмассив из последних 5 элементов: " + lastFiveNumbers);
 
     function getEvenNumbersSum(numbers) {
-        return numbers.reduce((sum, e) => {
-            if (e % 2 === 0) {
-                return sum + e;
-            }
-
-            return sum;
-        }, 0);
+        return numbers.reduce((sum, e) => e % 2 === 0 ? sum + e : sum, 0);
     }
 
     console.log("Сумма чётных элементов массива: " + getEvenNumbersSum(numbers));
