@@ -24,8 +24,8 @@
 }
 
 .field_wrapper input {
-    width: 500px;
-    height: 40px;
+    max-width: 500px;
+    max-height: 40px;
     border: #000 solid 1px;
     font-size: 20px;
     padding: 10px 5px;
@@ -35,8 +35,8 @@
 .temperature_converter_form button {
     vertical-align: top;
     margin-top: 10px;
-    padding: 0.53%;
-    background-color: #4EFF61;
+    padding: 10px;
+    background-color: #5eff6f;
     color: #FFF;
     font-weight: bold;
     outline: none;

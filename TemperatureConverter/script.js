@@ -10,22 +10,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
         temperatureInputTextField.classList.remove("invalid");
 
-        const temperatureInputValueText = temperatureInputTextField.value.trim();
+        const temperatureInputText = temperatureInputTextField.value.trim();
+        const celsiusTemperature = parseFloat(temperatureInputText);
 
-        if (temperatureInputValueText.length === 0 || isNaN(temperatureInputValueText)) {
+        if (temperatureInputText.length === 0 || isNaN(celsiusTemperature)) {
             temperatureInputTextField.classList.add("invalid");
             return;
         }
 
-        const celsius = parseFloat(temperatureInputTextField.value);
-
         temperatureOutputList.innerHTML = "";
 
+        function convertToFahrenheit(celsiusTemperature) {
+            return celsiusTemperature * 1.8 + 32;
+        }
+
+        function convertToKelvin(celsiusTemperature) {
+            return celsiusTemperature + 237.15;
+        }
+
         const fahrenheitOutputText = document.createElement("li");
-        fahrenheitOutputText.textContent = `Температура в Фаренгейтах: ${(celsius * 1.8 + 32).toFixed(3)}`;
+        fahrenheitOutputText.textContent = "Температура в градусах Фаренгейта: " + convertToFahrenheit(celsiusTemperature);
 
         const kelvinOutputText = document.createElement("li");
-        kelvinOutputText.textContent = `Температура в Кельвинах: ${(celsius + 273.15).toFixed(3)}`;
+        kelvinOutputText.textContent = "Температура в Кельвинах: " + convertToKelvin(celsiusTemperature);
 
         temperatureOutputList.appendChild(fahrenheitOutputText);
         temperatureOutputList.appendChild(kelvinOutputText);
