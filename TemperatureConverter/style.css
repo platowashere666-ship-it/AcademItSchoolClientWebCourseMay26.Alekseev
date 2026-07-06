@@ -19,8 +19,15 @@
     color: #FFF;
 }
 
+.input_block {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
 .field_wrapper {
-    display: inline-block;
+    flex: 0 1 auto;
 }
 
 .field_wrapper input {
@@ -29,30 +36,34 @@
     border: #000 solid 1px;
     font-size: 20px;
     padding: 10px 5px;
-    margin-top: 10px;
+    margin: 0;
+    display: block;
 }
 
 .temperature_converter_form button {
-    vertical-align: top;
-    margin-top: 10px;
     padding: 10px;
-    background-color: #5eff6f;
+    background-color: #90FF99;
     color: #FFF;
     font-weight: bold;
     outline: none;
     cursor: pointer;
     border: #000 solid 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin: 0;
+    align-self: flex-start;
 }
 
 .temperature_converter_form button:hover {
-    background-color: #42CB52;
+    background-color: #5EFF6F;
 }
 
 .error_message {
-    display: none;
+    visibility: hidden;
     color: #FF3256;
     margin-top: 5px;
     font-weight: bold;
+    height: 25px;
 }
 
 .invalid {
@@ -61,7 +72,7 @@
 }
 
 .invalid ~ .error_message {
-    display: block;
+    visibility: visible;
 }
 
 .temperature_output_list {
