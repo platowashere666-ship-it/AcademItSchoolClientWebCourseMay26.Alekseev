@@ -6,7 +6,7 @@
     }
 
     Animal.prototype.talk = function () {
-        console.log(`${this.name} издаёт звук`);
+        console.log(`${this.name} издаёт звук (версия с прототипами)`);
     };
 
     function Cat(name) {
@@ -16,7 +16,7 @@
     Object.setPrototypeOf(Cat.prototype, Animal.prototype);
 
     Cat.prototype.talk = function () {
-        console.log(`${this.name} мяукает`)
+        console.log(`${this.name} мяукает (версия с прототипами)`);
     };
 
     function Dog(name) {
@@ -26,7 +26,7 @@
     Object.setPrototypeOf(Dog.prototype, Animal.prototype);
 
     Dog.prototype.talk = function () {
-        console.log(`${this.name} гавкает`);
+        console.log(`${this.name} гавкает (версия с прототипами)`);
     };
 
     const cat = new Cat("Стеша");

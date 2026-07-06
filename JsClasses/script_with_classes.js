@@ -7,19 +7,19 @@
         }
 
         talk() {
-            console.log(`${this.name} издаёт звук`);
+            console.log(`${this.name} издаёт звук (версия с классами)`);
         }
     }
 
     class Cat extends Animal {
         talk() {
-            console.log(`${this.name} мяукает`);
+            console.log(`${this.name} мяукает (версия с классами)`);
         }
     }
 
     class Dog extends Animal {
         talk() {
-            console.log(`${this.name} гавкает`);
+            console.log(`${this.name} гавкает (версия с классами)`);
         }
     }
 
