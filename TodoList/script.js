@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         
                         <button class="cancel-button" type="button">Отменить</button>  
                     </form>
-                `
+                `;
 
                 const editTodoItemTextField = todoItem.querySelector(".edit-todo-item-text-field");
 
