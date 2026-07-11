@@ -1,0 +1,80 @@
+"use strict";
+$(function () {
+    const form = $("#new-todo-form");
+    const newTodoItemTextField = $("#new-todo-item-text-field");
+    const todoList = $("#todo-list");
+
+    form.on("submit", function (e) {
+        e.preventDefault();
+
+        newTodoItemTextField.removeClass("invalid");
+
+        let newTodoItemText = newTodoItemTextField.val().trim();
+
+        if (newTodoItemText.length === 0) {
+            newTodoItemTextField.addClass("invalid");
+            return;
+        }
+
+        const todoItem = $("<li>");
+
+        function setViewMode() {
+            todoItem.html(`
+                <span class="todo-item-text"></span>
+                <button class="edit-button" type="button">Редактировать</button>
+                <button class="delete-button" type="button">Удалить</button> 
+            `);
+
+            todoItem.find(".todo-item-text").text(newTodoItemText);
+
+            todoItem.find(".delete-button").on("click", function () {
+                todoItem.remove();
+            });
+
+            todoItem.find(".edit-button").on("click", function () {
+                todoItem.html(`
+                    <form class="edit-todo-form">
+                        <div class="edit-field-wrapper">
+                            <input class="edit-todo-item-text-field" type="text">
+                            <div class="edit-error-message">Необходимо заполнить поле</div>
+                        </div>
+                        
+                        <button class="save-button">Сохранить</button>
+                        
+                        <button class="cancel-button" type="button">Отменить</button>  
+                    </form>
+                `);
+
+                const editTodoItemTextField = todoItem.find(".edit-todo-item-text-field");
+
+                editTodoItemTextField.val(newTodoItemText);
+
+                todoItem.find(".cancel-button").on("click", function () {
+                    setViewMode();
+                });
+
+                todoItem.find(".edit-todo-form").on("submit", function (e) {
+                    e.preventDefault();
+
+                    editTodoItemTextField.removeClass("invalid");
+
+                    const editTodoItemText = editTodoItemTextField.val().trim();
+
+                    if (editTodoItemText.length === 0) {
+                        editTodoItemTextField.addClass("invalid");
+                        return;
+                    }
+
+                    newTodoItemText = editTodoItemText;
+                    setViewMode();
+                });
+            });
+        }
+
+        setViewMode();
+
+        todoList.append(todoItem);
+
+        newTodoItemTextField.val("");
+    });
+});
