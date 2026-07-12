@@ -32,6 +32,7 @@
 
 .field_wrapper input {
     max-width: 500px;
+    min-width: 350px;
     max-height: 40px;
     border: #000 solid 1px;
     font-size: 20px;
