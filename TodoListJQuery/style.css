@@ -67,7 +67,7 @@
 .new-todo-form button {
     font-size: 20px;
     padding: 7px 20px;
-    background-color: #a4ff67;
+    background-color: #83cc50;
     font-weight: bold;
     color: #fff;
     outline: none;
@@ -81,7 +81,7 @@
 }
 
 .new-todo-form button:hover {
-    background-color: #3ada00;
+    background-color: #309b00;
 }
 
 .error-message, .edit-error-message {
@@ -102,7 +102,7 @@
 }
 
 .todo-list {
-    padding: 10px 20px;
+    padding: 10px 0;
     list-style: none;
     max-width: 100%;
     margin: 0;
@@ -117,7 +117,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 10px 5px;
+    padding: 10px 0;
     border-radius: 5px;
     word-break: break-word;
     max-width: 100%;
@@ -195,9 +195,9 @@
 }
 
 .save-button {
-    background-color: #a4ff67;
+    background-color: #83cc50;
 }
 
 .save-button:hover {
-    background-color: #3ada00;
+    background-color: #309b00;
 }

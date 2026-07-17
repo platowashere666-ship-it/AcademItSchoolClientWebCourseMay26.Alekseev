@@ -1,4 +1,5 @@
 "use strict";
+
 $(function () {
     const form = $("#new-todo-form");
     const newTodoItemTextField = $("#new-todo-item-text-field");
@@ -21,8 +22,11 @@ $(function () {
         function setViewMode() {
             todoItem.html(`
                 <span class="todo-item-text"></span>
-                <button class="edit-button" type="button">Редактировать</button>
-                <button class="delete-button" type="button">Удалить</button> 
+                    
+                <div>
+                    <button class="edit-button" type="button">Редактировать</button>
+                    <button class="delete-button" type="button">Удалить</button>
+                </div>
             `);
 
             todoItem.find(".todo-item-text").text(newTodoItemText);
@@ -40,7 +44,6 @@ $(function () {
                         </div>
                         
                         <button class="save-button">Сохранить</button>
-                        
                         <button class="cancel-button" type="button">Отменить</button>  
                     </form>
                 `);

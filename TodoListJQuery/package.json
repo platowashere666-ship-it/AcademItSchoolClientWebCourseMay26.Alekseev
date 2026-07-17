@@ -1,0 +1,13 @@
+{
+  "name": "todolistjquery",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jquery": "^4.0.0"
+  }
+}
