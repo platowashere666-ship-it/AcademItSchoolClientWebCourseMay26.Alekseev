@@ -49,26 +49,28 @@
     const averageAge = _.meanBy(people, "age");
     console.log("Средний возраст людей из списка: " + averageAge);
 
-    const peopleAgedFrom20To30List = _
-        .chain(people)
-        .filter(p => p.age >= 20 && p.age <= 30)
-        .sortBy("age")
-        .value();
+    function getPeopleAgedFrom20To30List(people) {
+        return _.chain(people)
+            .filter(p => p.age >= 20 && p.age <= 30)
+            .sortBy("age")
+            .value();
+    }
+
+    const peopleAgedFrom20To30List = getPeopleAgedFrom20To30List(people);
     console.log("Список людей от 20 до 30 включительно, отсортированный по возрастанию возраста:", peopleAgedFrom20To30List);
 
-    const uniqueNamesList = _
-        .chain(people)
-        .filter(p => p.age >= 20 && p.age <= 30)
-        .uniqBy("name")
-        .orderBy(["age"], ["desc"])
-        .map("name")
-        .value();
-    console.log("Список уникальных имён людей от 20 до 30 включительно, " +
-        "отсортированный по убыванию возраста:", uniqueNamesList);
+    function getUniqueNamesList(people) {
+        return _.chain(people)
+            .filter(p => p.age >= 20 && p.age <= 30)
+            .uniqBy("name")
+            .orderBy(["name"], ["desc"])
+            .map("name")
+            .value();
+    }
 
-    const peopleNamesCountMap = _
-        .chain(people)
-        .countBy("name")
-        .value()
-    console.log("Подсчёт всех людей поимённо:", peopleNamesCountMap);
+    const uniqueNamesList = getUniqueNamesList(people);
+    console.log("Список уникальных имён людей от 20 до 30 включительно, отсортированный по убыванию:", uniqueNamesList);
+
+    const namesCountMap = _.countBy(people, "name");
+    console.log("Подсчёт всех людей поимённо:", namesCountMap);
 })();
