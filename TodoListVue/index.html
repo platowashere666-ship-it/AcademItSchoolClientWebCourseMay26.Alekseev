@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="node_modules/vue/dist/vue.global.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+<div id="app" class="container">
+    <h1 class="main-header">Список задач</h1>
+
+    <form id="new-todo-form" class="new-todo-form" @submit.prevent="addTodoItem">
+        <div class="mb-2">
+            <label for="new-todo-item-text-field">Введите текст задачи</label>
+        </div>
+
+        <div class="row gx-3">
+            <div class="col">
+                <input v-model.trim="newTodoItemText" class="form-control"
+                       id="new-todo-item-text-field" type="text"
+                       :class="{ 'is-invalid': isNewTodoItemTextInvalid }">
+                <div class="invalid-feedback">Необходимо заполнить поле</div>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary">Создать</button>
+            </div>
+        </div>
+    </form>
+
+    <ul id="todo-list" class="todo-list mt-3">
+        <li v-for="item in items" :key="item.id" class="mt-2">
+            <template v-if="item.isEditing">
+                <form @submit.prevent="">
+                    <div class="row g-3">
+                        <div class="col">
+                            <input v-model.trim="item.editingTodoItemText" class="form-control" type="text"
+                                   :class="{ 'is-invalid': item.isEditTodoItemTextInvalid }">
+                            <div class="invalid-feedback">Необходимо заполнить поле</div>
+                        </div>
+
+                        <div class="col-auto">
+                            <button @click="saveTodoItem(item)" class="btn btn-primary me-2">Сохранить</button>
+                            <button @click="item.isEditing = false" class="btn btn-secondary" type="button">Отменить
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </template>
+            <template v-else>
+                <div class="row">
+                    <div class="col" v-text="item.text"></div>
+
+                    <div class="col-auto">
+                        <button @click="startEditing(item)" class="btn btn-primary me-2" type="button">Редактировать
+                        </button>
+                        <button @click="showRemoveTodoItemDialog(item)" class="btn btn-danger" type="button">Удалить
+                        </button>
+                    </div>
+                </div>
+            </template>
+        </li>
+    </ul>
+
+    <div ref="confirmDeleteDialog" class="confirm-dialog modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Подтвердите удаление задачи</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Вы действительно хотите удалить задачу?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+                    <button @click="removeTodoItem()" type="button" class="confirm-delete-button btn btn-danger">Да
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
