@@ -62,15 +62,16 @@
     function getUniqueNamesList(people) {
         return _.chain(people)
             .filter(p => p.age >= 20 && p.age <= 30)
-            .uniqBy("name")
-            .orderBy(["name"], ["desc"])
             .map("name")
+            .uniq()
+            .sortBy()
+            .reverse()
             .value();
     }
 
     const uniqueNamesList = getUniqueNamesList(people);
     console.log("Список уникальных имён людей от 20 до 30 включительно, отсортированный по убыванию:", uniqueNamesList);
 
-    const namesCountMap = _.countBy(people, "name");
-    console.log("Подсчёт всех людей поимённо:", namesCountMap);
+    const namesCountsMap = _.countBy(people, "name");
+    console.log("Подсчёт всех людей поимённо:", namesCountsMap);
 })();
