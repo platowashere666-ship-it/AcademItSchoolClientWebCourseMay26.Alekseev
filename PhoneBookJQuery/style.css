@@ -1,0 +1,52 @@
+body {
+    background-color: #e8e8e8;
+}
+
+.container {
+    font-family: "Baskerville Old Face", sans-serif;
+    color: #fff;
+    background-color: #9146ff;
+    min-height: 100vh;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 0 20px;
+    }
+}
+
+.main-header {
+    text-shadow: 2px 2px 4px #000;
+    border-bottom: 2px solid;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    max-width: 10em;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    color: #ffc107;
+    font-weight: 500;
+}
+
+.table {
+    text-align: center;
+}
+
+.table thead th {
+    background-color: #b3ffdf;
+}
+
+.table tbody th {
+    background-color: #ffe3ff;
+}
