@@ -64,8 +64,7 @@
             .filter(p => p.age >= 20 && p.age <= 30)
             .map("name")
             .uniq()
-            .sortBy()
-            .reverse()
+            .orderBy([], ["desc"])
             .value();
     }
 
