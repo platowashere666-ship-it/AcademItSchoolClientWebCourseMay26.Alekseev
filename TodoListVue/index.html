@@ -44,8 +44,11 @@
                         </div>
 
                         <div class="col-auto">
-                            <button @click="saveTodoItem(item)" class="btn btn-primary me-2">Сохранить</button>
-                            <button @click="item.isEditing = false" class="btn btn-secondary" type="button">Отменить
+                            <button @click="saveTodoItem(item)" class="btn btn-primary me-2">
+                                Сохранить
+                            </button>
+                            <button @click="item.isEditing = false" class="btn btn-secondary" type="button">
+                                Отменить
                             </button>
                         </div>
                     </div>
@@ -56,9 +59,11 @@
                     <div class="col" v-text="item.text"></div>
 
                     <div class="col-auto">
-                        <button @click="startEditing(item)" class="btn btn-primary me-2" type="button">Редактировать
+                        <button @click="startEditing(item)" class="btn btn-primary me-2" type="button">
+                            Редактировать
                         </button>
-                        <button @click="showRemoveTodoItemDialog(item)" class="btn btn-danger" type="button">Удалить
+                        <button @click="showRemoveTodoItemDialog(item)" class="btn btn-danger" type="button">
+                            Удалить
                         </button>
                     </div>
                 </div>
@@ -77,8 +82,11 @@
                     <p>Вы действительно хотите удалить задачу?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
-                    <button @click="removeTodoItem()" type="button" class="confirm-delete-button btn btn-danger">Да
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Нет
+                    </button>
+                    <button @click="removeTodoItem" type="button" class="confirm-delete-button btn btn-danger">
+                        Да
                     </button>
                 </div>
             </div>
