@@ -1,20 +1,9 @@
-body {
-    background-color: #e8e8e8;
-}
-
 .container {
     font-family: "Baskerville Old Face", sans-serif;
     color: #fff;
     background-color: #9146ff;
+    min-width: 100vw;
     min-height: 100vh;
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        box-shadow: 0 0 20px;
-    }
 }
 
 .main-header {
@@ -26,16 +15,12 @@ body {
     font-weight: bold;
 }
 
-.form-control {
-    max-width: 10em;
-}
-
 .is-invalid {
     border-color: #dc3545;
 }
 
 .invalid-feedback {
-    color: #ffc107;
+    color: #dc3545;
     font-weight: 500;
 }
 

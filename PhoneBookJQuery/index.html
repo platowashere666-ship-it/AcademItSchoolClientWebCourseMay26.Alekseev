@@ -16,8 +16,31 @@
     <h1 class="main-header mb-2 pt-2">Телефонная книга</h1>
 
     <div class="row g-3">
-        <div class="col-md-6">
+        <div class="col-md-4 order-md-2">
+            <form id="new-contact-form">
+                <div class="mb-3">
+                    <label for="new-contact-surname" class="form-label">Фамилия</label>
+                    <input type="text" class="form-control" id="new-contact-surname" placeholder="Фамилия">
+                    <div class="invalid-feedback">Необходимо заполнить поле "Фамилия"</div>
+                </div>
 
+                <div class="mb-3">
+                    <label for="new-contact-name" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="new-contact-name" placeholder="Имя">
+                    <div class="invalid-feedback">Необходимо заполнить поле "Имя"</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="new-contact-phone-number" class="form-label">Номер телефона</label>
+                    <input type="tel" class="form-control" id="new-contact-phone-number" placeholder="Номер телефона">
+                    <div class="invalid-feedback">Необходимо заполнить поле "Номер телефона"</div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Создать</button>
+            </form>
+        </div>
+
+        <div class="col-md-8 order-md-1">
             <label for="phonebook" class="form-label">Таблица контактов</label>
 
             <table class="table table-bordered" id="phonebook">
@@ -33,31 +56,6 @@
                 <tbody class="table-light table-striped-columns" id="phonebook-body">
                 </tbody>
             </table>
-        </div>
-
-        <div class="col-auto">
-
-            <form id="new-contact-form">
-                <div class="mb-3">
-                    <label for="new-contact-surname" class="form-label">Фамилия</label>
-                    <input type="text" class="form-control" id="new-contact-surname" placeholder="Иванов">
-                    <div class="invalid-feedback">Необходимо заполнить поле "Фамилия"</div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="new-contact-name" class="form-label">Имя</label>
-                    <input type="text" class="form-control" id="new-contact-name" placeholder="Иван">
-                    <div class="invalid-feedback">Необходимо заполнить поле "Имя"</div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="new-contact-phone-number" class="form-label">Номер телефона</label>
-                    <input type="tel" class="form-control" id="new-contact-phone-number" placeholder="+7__________">
-                    <div class="invalid-feedback">Необходимо заполнить поле "Номер телефона"</div>
-                </div>
-
-                <button class="btn btn-primary" type="submit">Создать</button>
-            </form>
         </div>
     </div>
 </div>
